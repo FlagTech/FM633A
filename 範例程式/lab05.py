@@ -3,7 +3,7 @@ import ledstrip
 from umqtt.robust import MQTTClient
 
 #建立變數來存放條燈特效類別
-led_strip_effect = 0
+led_strip_effect = b'0'
 #設定條燈腳位為 4, 燈珠數量為 15
 ledstrip.setup(4,15)
 
