@@ -2,16 +2,14 @@ import network, time, neopixel
 from machine import Pin, PWM
 from umqtt.robust import MQTTClient
 
-# C4  = 261
-# D4  = 294
-# E4  = 330
-# F4  = 349
-# G4  = 392
-# A4  = 440
-# B4  = 494
-
 # 對應頻率
-rhythm = (261, 294, 330, 349, 392, 440, 494)
+rhythm = (261,  # C4
+          294,  # D4
+          330,  # E4
+          349,  # F4
+          392,  # G4
+          440,  # A4
+          494)  # B4
 
 buzzer = PWM(Pin(5))
 buzzer.duty(0)
@@ -36,7 +34,7 @@ print("控制板已連線")
 
 # 建立 MQTT 客戶端物件
 client = MQTTClient(
-    client_id="D1mini", 
+    client_id="", 
     server="io.adafruit.com", 
     user="AIO 帳號", 
     password="AIO 金鑰",

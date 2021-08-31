@@ -15,8 +15,6 @@ def play_tone(freq, msec):
     buzzer.duty(0)          
     time.sleep(0.05)
 
-tune = RTTTL("winner:d=4,o=5,b=140:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p,8c6,16p,8g,16p,8e,16p,8a,8b,2e6")
-
 # 連線到無線網路
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
@@ -29,7 +27,7 @@ print("控制板已連線")
 
 # 建立 MQTT 客戶端物件
 client = MQTTClient(
-    client_id="D1mini", 
+    client_id="", 
     server="io.adafruit.com", 
     user="AIO 帳號", 
     password="AIO 金鑰",
@@ -39,6 +37,7 @@ client = MQTTClient(
 def get_cmd(topic, msg):
     print(topic,msg)
     if msg == b"100":
+        tune = RTTTL("winner:d=4,o=5,b=140:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p,8c6,16p,8g,16p,8e,16p,8a,8b,2e6")
         print('play music')
         for freq, msec in tune.notes():
             play_tone(freq, msec) 

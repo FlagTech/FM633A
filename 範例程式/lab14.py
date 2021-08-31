@@ -21,7 +21,7 @@ print("控制板已連線")
 
 # 建立 MQTT 客戶端物件
 client = MQTTClient(
-    client_id="D1mini", 
+    client_id="", 
     server="io.adafruit.com", 
     user="AIO 帳號", 
     password="AIO 金鑰",
