@@ -31,7 +31,7 @@ client = MQTTClient(
 def get_cmd(topic, msg):
     global buzzer_on
     print(topic,msg)
-    if msg == b"start":
+    if msg == b"100":
         buzzer_on = 1
         print('NO MASK!') 
     else:
