@@ -27,8 +27,8 @@ print("控制板已連線")
 client = MQTTClient(
     client_id="", 
     server="io.adafruit.com", 
-    user="Rainnie", 
-    password="aio_exaA21CEmjAUxEySVU0fC8q5kVYW",
+    user="AIO 帳號", 
+    password="AIO 金鑰",
     ssl=False)
     
 def get_cmd(topic, msg):

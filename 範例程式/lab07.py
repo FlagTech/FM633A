@@ -12,7 +12,7 @@ buzzer_on = 0
 # 連線到無線網路
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
-sta_if.connect("FlagPub", "")
+sta_if.connect("無線網路基地台", "無線網路密碼")
 
 # 循環測試網路直到網路連線成功
 while not sta_if.isconnected():  
@@ -22,9 +22,9 @@ print("控制板已連線")
 # 建立 MQTT 客戶端物件
 client = MQTTClient(
     client_id="", 
-    server="test.mosquitto.org", 
-    user="rw", 
-    password="readwrite",
+    server="io.adafruit.com", 
+    user="AIO 帳號", 
+    password="AIO 金鑰",
     ssl=False)
 
 # 註冊收到訂閱資料時的處理函式 

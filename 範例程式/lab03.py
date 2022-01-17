@@ -6,7 +6,7 @@ from neopixel import NeoPixel
 import time
 
 # 建立 NeoPixel 物件, 設定控制為 4 號腳位, 燈珠數量為 15, 命名為 led_strip
-led_strip = NeoPixel(Pin(0), 15)
+led_strip = NeoPixel(Pin(4), 15)
 
 while True:                             # 一直不斷執行
     for i in range(led_strip.n):        # for 走訪整數串列, 範圍為燈珠數量
